@@ -8,6 +8,15 @@ def sum(arr : list) -> int:
     :param arr:
     :return:
     """
+    total=0
+    for value in arr:
+        try:
+            total=total+value
+        except:
+            TypeError
+            pass
+    return total
+
     pass
 
 def cleanData(rawData : list) ->list:
@@ -17,6 +26,13 @@ def cleanData(rawData : list) ->list:
     :param rawData:
     :return:
     """
+    clean=[]
+    for value in rawData:
+        try:
+            clean.append(float(value))
+        except (ValueError, TypeError):
+            pass
+    return clean
     pass
 def unreliableCalculator(divisors : list) -> list:
     """
@@ -27,17 +43,33 @@ def unreliableCalculator(divisors : list) -> list:
     :param divisors:
     :return:
     """
+    list=[]
+    for value in divisors:
+        try:
+            list.append(100/value)
+        except TypeError:
+            list.append("TypeError")
+        except ZeroDivisionError:
+            list.append("ZeroDivisionError")
+    return list
+
+
     pass
 
 
 def upperAll(arr : list) -> None:
     """
-    Modiy the function such that is uppercases all strings within the given argument list.
-    The string method .upper() turns all characters in as tirng uppercase.
-    You should mpdify the original list not return a new list.
+    Modify the function such that is uppercases all strings within the given argument list.
+    The string method .upper() turns all characters in as stirng uppercase.
+    You should modify the original list not return a new list.
     :param arr:
     :return:
     """
+    for i in range(len(arr)):
+        try:
+            arr[i]=arr[i].upper()
+        except AttributeError:
+            pass
     x = "hello"
     print(x)
     x = x.upper()
@@ -54,5 +86,13 @@ def firstItems(arr : list) -> list:
     :param arr:
     :return:
     """
+    list=[]
+    for value in arr:
+        try:
+            list.append(value[0])
+        except TypeError:
+            list.append(value)
+    return list
+
     pass
 
